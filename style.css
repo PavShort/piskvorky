@@ -1,10 +1,16 @@
-* { 
-  box-sizing: border-box; 
-  *, :after, :before { box-sizing: inherit; }
+* {
+  box-sizing: border-box;
+
+  *,
+  :after,
+  :before {
+    box-sizing: inherit;
+  }
 }
 
 body {
   height: 100vh;
+  margin: 0;
 }
 
 .pozadi {
@@ -25,25 +31,26 @@ body {
   align-items: center;
   width: 350px;
   padding-top: 20px;
-  }
+}
 
 .obrazek {
   max-width: 100%;
   border-radius: 3% 3% 0 0;
-  }
+}
 
 h1 {
   font-family: Lobster;
   font-size: 3rem;
   margin: 15px;
-    }
+}
 
 .text {
-background-color: #283e50;
-color: white;
-text-align: center;
-font-family: Arial, Helvetica, sans-serif;
-padding: 0 16px 0 16px;
+  background-color: #283e50;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 16px 0 16px;
 }
 
 .tlacitka {
@@ -51,29 +58,34 @@ padding: 0 16px 0 16px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: center;
   gap: 2px;
-  }
+  
+}
 
-  a {
-  text-decoration: none; 
-  color: white; 
+a {
+  text-decoration: none;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
-  cursor: pointer;
-  }
+}
 
- .pravidla {
-   background-color: #1fcca4;
-   }
- 
- .pravidla:hover {
-   background-color: #1cbb96;
- }
- 
- .start {
-   background-color: #0197f6;
- }
- 
- .start:hover {
-   background-color: #0090e9;
-   }
+.pravidla,
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #1fcca4;
+  cursor: pointer;
+}
+
+.pravidla:hover {
+  background-color: #1cbb96;
+}
+
+.start {
+  background-color: #0197f6;
+}
+
+.start:hover {
+  background-color: #0090e9;
+}
