@@ -4,12 +4,12 @@ const insertHrac = (evt) => {
   evt.target.disabled = true;
   if (aktHrac === "circle") {
     evt.target.classList.add("hra__ctverecek--circle");
-    aktHrac === "cross";
-    document.getElementById("aktHrac").src = "obrazky/cross.svg";
+    aktHrac = "cross";
+    document.getElementById("aktivniHrac").src = "obrazky/cross.svg";
   } else {
     evt.target.classList.add("hra__ctverecek--cross");
-    aktHrac === "circle";
-    document.getElementById("aktHrac").src = "obrazky/circle.svg";
+    aktHrac = "circle";
+    document.getElementById("aktivniHrac").src = "obrazky/circle.svg";
   }
 };
   
