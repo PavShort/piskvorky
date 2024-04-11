@@ -144,3 +144,35 @@ background-color: #1fcca4;
 .hra__ctverecek:focus {
   filter: brightness(80%); 
 }
+
+.hra__ctverecek:disabled {
+  filter: brightness(10%);
+  cursor: default;
+}
+
+.hra__ctverecek--circle,
+.hra__ctverecek--cross {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  animation: zoomIn 0.15s
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hra__ctverecek--circle {
+  background-image: url(obrazky/circle.svg); 
+}
+
+.hra__ctverecek--cross {
+  background-image: url(obrazky/cross.svg);
+}
+
+
