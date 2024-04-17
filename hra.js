@@ -1,4 +1,7 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let aktHrac = "circle";
+const pole = document.querySelectorAll("button");
 
 const insertHrac = (evt) => {
   evt.target.disabled = true;
@@ -10,19 +13,36 @@ const insertHrac = (evt) => {
     evt.target.classList.add("hra__ctverecek--cross");
     aktHrac = "circle";
     document.getElementById("aktivniHrac").src = "obrazky/circle.svg";
-  }
-};
+  };
+
+   const prepisSymbolu = [...pole].map((button) => {
+    if (button.classList.contains("hra__ctverecek--circle")) {
+      return 'o';
+      } else if (button.classList.contains("hra__ctverecek--cross")) {
+      return 'x';
+      } else {
+      return '_';
+      }
+    });
   
-  document.querySelector("button:nth-child(1)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(2)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(3)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(4)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(5)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(6)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(7)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(8)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(9)").addEventListener("click", insertHrac);
-  document.querySelector("button:nth-child(10)").addEventListener("click", insertHrac);
+    const vitez = findWinner(prepisSymbolu);
+    if (vitez === 'o' || vitez === 'x') {
+      setTimeout(() => {
+        alert(`Vyhrál hráč se symbolem ${vitez} !`);
+        location.reload();
+      }, 150);
+    } else if (vitez === 'tie') {
+      setTimeout(() => {
+        alert(`Hra skončila remízou!`);
+        location.reload();
+      }, 150)
+    };
+   }; 
+  
+    pole.forEach ((button) => {
+      button.addEventListener("click", insertHrac)
+    });    
+
 
 /*Bonus - ověření restartu hry uživatelem  */
   
