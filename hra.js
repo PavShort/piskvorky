@@ -38,7 +38,7 @@ const insertHrac = async (evt) => {
       location.reload();
     }, 150);
   } else { /*připojení AI pro tah*/ 
-    if (aktHrac = 'cross') {
+    if (aktHrac === 'cross') {
     pole.forEach((button) => {
       button.disabled = true;
     });  
